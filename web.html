@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <button onclick="getLocation()">Get GPS</button>
+  <p id="loc"></p>
+
+  <script>
+    function getLocation() {
+      navigator.geolocation.getCurrentPosition(
+        pos => loc.innerText = `Lat: ${pos.coords.latitude}, Lon: ${pos.coords.longitude}`,
+        err => loc.innerText = 'Error: ' + err.message
+      );
+    }
+  </script>
+</body>
+</html>
